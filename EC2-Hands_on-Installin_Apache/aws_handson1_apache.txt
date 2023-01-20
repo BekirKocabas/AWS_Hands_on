@@ -1,0 +1,45 @@
+1. Launch an Amazon EC2 instance with setting seen below: 
+2. Connect to your instance with SSH. oder vscode mit config configuration
+3. Update the installed packages and package cache on your instance.
+	sudo yum update -y
+4. Install the Apache Web Server-default page
+	sudo yum install httpd -y
+5. Check status of the Apache Web Server. show taht it is not running(Red). After that Start the Apache Web Server.
+	sudo systemctl status httpd
+	sudo systemctl start httpd
+6. Check status of the Apache Web Server.Show that it is running (Green)
+	sudo systemctl status httpd
+7. Enable the Apache Web Server to survive the restarts then Check from browser with DNS.  
+Since the security group is available only for add HTTP add port 80 and show again.
+	sudo systemctl enable httpd
+8. Set permission of the files and folders under `/var/www/html/` folder to everyone.
+	sudo chmod -R 777 /var/www/html
+9. Go to the /var/www/html
+	cd /var/www/html
+10. Create a custom `index.html` file under `/var/www/html/` folder to be served on the Server.
+	echo "HELLO CLARUSWAY" > /var/www/html/index.html
+12. Restart the httpd server and `check` from browser.
+	sudo systemctl restart httpd
+
+19. Configure instance to automate web server installation with `user data` script.
+
+#! /bin/bash
+#update os
+yum update -y
+#install apache server
+yum install -y httpd
+# get date and time of server
+DATE_TIME=`date`
+# create a custom index.html file
+echo "<html>
+<head>
+    <title> My First Web Server</title>
+</head>
+<body>
+    <h1>Hello to Everyone from My First Web Server</h1>
+    <p>This instance is created at <b>$DATE_TIME</b></p>
+</body>
+</html>" > /var/www/html/index.html
+# start apache server
+systemctl start httpd
+systemctl enable httpd
