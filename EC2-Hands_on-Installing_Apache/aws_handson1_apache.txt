@@ -17,7 +17,7 @@ Since the security group is available only for add HTTP add port 80 and show aga
 9. Go to the /var/www/html
 	cd /var/www/html
 10. Create a custom `index.html` file under `/var/www/html/` folder to be served on the Server.
-	echo "HELLO CLARUSWAY" > /var/www/html/index.html
+	echo "HELLO World" > /var/www/html/index.html
 12. Restart the httpd server and `check` from browser.
 	sudo systemctl restart httpd
 
