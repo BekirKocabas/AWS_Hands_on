@@ -52,7 +52,7 @@ At the end of the this hands-on training, students will be able to;
 
      - Right top of the page click your name ----> Select My account -->> IAM User and Role Access to Billing Information--->> Edit--->>
 
-- Sign Out and Sign in  with newly created IAM user with "Clarusway IAM user". 
+- Sign Out and Sign in  with newly created IAM user with "Bekir IAM user". 
 
 - Check the users and Billing services to be accessible or not.
 
