@@ -1,0 +1,23 @@
+
+[
+    {
+        "IndexName": "PostedBy-Message-Index",
+        "KeySchema": [
+            {
+                "AttributeName": "PostedBy",
+                "KeyType": "HASH"
+            },
+            {
+                "AttributeName": "Message",
+                "KeyType": "RANGE"
+            }
+        ],
+        "Projection": {
+            "ProjectionType": "ALL"
+        },
+        "ProvisionedThroughput": {
+            "ReadCapacityUnits": 10,
+            "WriteCapacityUnits": 5
+        }
+    }    
+]
