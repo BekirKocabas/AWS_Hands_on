@@ -180,7 +180,7 @@ SHOW DATABASES;
 USE clarusway;
 ```
 
-- Show tables within the `clarusway` db.
+- Show tables within the `clarusway` database.
 
 ```sql
 SHOW TABLES;
